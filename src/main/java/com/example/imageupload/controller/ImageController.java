@@ -13,14 +13,14 @@ import com.example.imageupload.service.ImageService;
 import lombok.RequiredArgsConstructor;
 import java.io.IOException;
 
-@RestController // Indique que cette classe est un contrôleur REST (retourne du JSON/XML)
-@RequestMapping("/api/images") // Toutes les URLs de ce contrôleur commencent par ce chemin
+@RestController 
+@RequestMapping("/api/images")
 @RequiredArgsConstructor
 public class ImageController {
 
     private final ImageService imageService;
 
-    @PostMapping("/upload") // Traite les requêtes POST sur /api/images/upload
+    @PostMapping("/upload") 
     public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) {
         try {
             String imageId = imageService.uploadImage(file);

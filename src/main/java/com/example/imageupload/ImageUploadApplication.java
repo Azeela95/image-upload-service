@@ -3,7 +3,7 @@ package com.example.imageupload;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication // Marque cette classe comme le point d'entrée de l'app Spring Boot
+@SpringBootApplication 
 public class ImageUploadApplication {
 
     public static void main(String[] args) {

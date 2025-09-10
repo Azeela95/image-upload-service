@@ -5,9 +5,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 
 @Data // Lombok : génère getters, setters, toString, etc.
-@Document(collection = "images") // Dit à Spring que cette classe est un document MongoDB
+@Document(collection = "images") 
 public class ImageDocument {
-    @Id // Marque ce champ comme l'identifiant unique MongoDB
+    @Id 
     private String id;
     private String name;
     private String contentType;
