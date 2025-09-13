@@ -23,7 +23,7 @@
 	</properties>
 
 	<dependencies>
-		<!-- Dépendance pour créer une application web (inclut Tomcat, Spring MVC) -->
+		<!-- Dépendance pour créer une application web  -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -42,7 +42,7 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Dépendance pour les tests (optionnelle mais recommandée) -->
+		<!-- Dépendance pour les tests (optionel)) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
