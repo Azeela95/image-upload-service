@@ -26,6 +26,15 @@ jobs:
       - name: Build and Test with Maven
         run: mvn -B clean verify
 
+      - name: Debug secrets (remove after test)
+        run: |
+          echo "Username length: ${#DOCKER_USERNAME}"
+          echo "Password length: ${#DOCKER_PASSWORD}"
+          echo "Username starts with: ${DOCKER_USERNAME:0:3}"
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
