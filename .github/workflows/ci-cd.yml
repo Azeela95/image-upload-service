@@ -1,4 +1,3 @@
-
 name: CI/CD Pipeline - Image Upload Service
 
 on:
@@ -6,6 +5,9 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+
+env:
+  IMAGE_NAME: azeela/image-upload-service
 
 jobs:
   build-test-docker:
@@ -32,11 +34,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          IMAGE_NAME=${{ secrets.DOCKER_USERNAME }}/image-upload-service
           docker build -t $IMAGE_NAME:latest .
           docker tag $IMAGE_NAME:latest $IMAGE_NAME:${{ github.sha }}
           docker push $IMAGE_NAME:latest
           docker push $IMAGE_NAME:${{ github.sha }}
-
-
-
